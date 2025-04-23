@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerators.WebAPI", "SourceGenerators.WebAPI\SourceGenerators.WebAPI.csproj", "{5BC99EA9-0F2D-43B9-A7B2-B0E4C556008A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGenerator", "MyGenerator\MyGenerator.csproj", "{EB4A8F01-4328-4BFC-8CED-687F96F7A362}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BC99EA9-0F2D-43B9-A7B2-B0E4C556008A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC99EA9-0F2D-43B9-A7B2-B0E4C556008A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC99EA9-0F2D-43B9-A7B2-B0E4C556008A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC99EA9-0F2D-43B9-A7B2-B0E4C556008A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4A8F01-4328-4BFC-8CED-687F96F7A362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4A8F01-4328-4BFC-8CED-687F96F7A362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4A8F01-4328-4BFC-8CED-687F96F7A362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4A8F01-4328-4BFC-8CED-687F96F7A362}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2807A79-3F46-41FB-87ED-CD29E6F15BF9}
+	EndGlobalSection
+EndGlobal
