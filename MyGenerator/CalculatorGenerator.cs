@@ -8,17 +8,21 @@ public class CalculatorGenerator : IIncrementalGenerator
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         var calculatorClassesProvider = context.SyntaxProvider.CreateSyntaxProvider(
-            predicate: (node, cancelToken) => node is ClassDeclarationSyntax classDeclaration && classDeclaration.Identifier.ToString() == "Calculator",
+            predicate: (node, cancelToken) => 
+            node is ClassDeclarationSyntax classDeclaration && 
+            classDeclaration.Identifier.ToString() == "Calculator",
             transform: (ctx, cancelToken) => (ClassDeclarationSyntax)ctx.Node);
 
-        context.RegisterSourceOutput(calculatorClassesProvider, (sourceProductionContext, calculatorClass) => Execute(calculatorClass, sourceProductionContext));
+        context.RegisterSourceOutput(calculatorClassesProvider, 
+            (sourceProductionContext, calculatorClass) => Execute(calculatorClass, sourceProductionContext));
     }
 
     public void Execute(ClassDeclarationSyntax calculatorClass, SourceProductionContext context)
     {
         var calculatorClassMembers = calculatorClass.Members;
 
-        var addMethod = calculatorClassMembers.FirstOrDefault(member => member is MethodDeclarationSyntax method && method.Identifier.Text == "Add");
+        var addMethod = calculatorClassMembers
+            .FirstOrDefault(member => member is MethodDeclarationSyntax method && method.Identifier.Text == "Add");
         var subtractMethod = calculatorClassMembers.FirstOrDefault(member => member is MethodDeclarationSyntax method && method.Identifier.Text == "Subtract");
         var multiplyMethod = calculatorClassMembers.FirstOrDefault(member => member is MethodDeclarationSyntax method && method.Identifier.Text == "Multiply");
         var divideMethod = calculatorClassMembers.FirstOrDefault(member => member is MethodDeclarationSyntax method && method.Identifier.Text == "Divide");
@@ -31,9 +35,11 @@ public class CalculatorGenerator : IIncrementalGenerator
 
         calcGeneratedClassBuilder.AppendLine();
 
-        BaseNamespaceDeclarationSyntax? calcClassNamespace = calculatorClass.Ancestors().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
-        calcClassNamespace ??= calculatorClass.Ancestors().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
-
+        BaseNamespaceDeclarationSyntax? calcClassNamespace = 
+            calculatorClass.Ancestors().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
+        calcClassNamespace ??= calculatorClass.Ancestors()
+            .OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
+        //????
         calcGeneratedClassBuilder.AppendLine($"namespace {calcClassNamespace?.Name};");
         calcGeneratedClassBuilder.AppendLine($"{calculatorClass.Modifiers} class {calculatorClass.Identifier}");
         calcGeneratedClassBuilder.AppendLine("{");

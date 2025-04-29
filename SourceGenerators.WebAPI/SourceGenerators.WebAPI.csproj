@@ -14,7 +14,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\MyGenerator\MyGenerator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer"/>
+		<ProjectReference Include="..\MyGenerator\MyGenerator.csproj" 
+						  ReferenceOutputAssembly="false" 
+						  OutputItemType="Analyzer"/>
 	</ItemGroup>
 
 </Project>
